@@ -3,12 +3,12 @@ import openai
 import subprocess
 import uuid
 
-openai.api_key = YOUR_OPENAI_KEY_API
+openai.api_key = "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"
 # Get user input for the topic
 topic = input("Enter a topic: ")
 
 # Generate text using OpenAI's GPT-3 API
-prompt = f"Generate a topic about {topic} described by a sarcastic Jerry Seinfeld and give the text."
+prompt = f"Generate a few sentence joke jerry says about {topic} described by a highly sarcastic highly extremely funny Jerry Seinfeld. Give only text"
 response = openai.Completion.create(
     engine="text-davinci-003",
     prompt=prompt,
@@ -32,4 +32,4 @@ with open(output_file, "w") as f:
     f.write(generated_text)
 
 # Call do_tts.py with the generated text
-subprocess.call(f"python tortoise-tts/tortoise/read.py --textfile \"{output_file}\" --voice seinfeld --preset high_quality", shell=True)
+subprocess.call(f"python tortoise-tts/tortoise/read.py --textfile \"{output_file}\" --voice seinfeld --preset standard", shell=True)
