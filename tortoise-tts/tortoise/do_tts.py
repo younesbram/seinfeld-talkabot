@@ -21,6 +21,8 @@ if __name__ == '__main__':
     parser.add_argument('--produce_debug_state', type=bool, help='Whether or not to produce debug_state.pth, which can aid in reproducing problems. Defaults to true.', default=True)
     parser.add_argument('--cvvp_amount', type=float, help='How much the CVVP model should influence the output.'
                                                           'Increasing this can in some cases reduce the likelihood of multiple speakers. Defaults to 0 (disabled)', default=.0)
+    parser.add_argument('--output_file', type=str, help='Name of the output file.', default='output.wav')
+
     args = parser.parse_args()
     os.makedirs(args.output_path, exist_ok=True)
 
