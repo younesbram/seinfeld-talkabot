@@ -3,7 +3,7 @@ import openai
 import subprocess
 import uuid
 
-openai.api_key = "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"
+openai.api_key = OPENAI_KEY
 # Get user input for the topic
 topic = input("Enter a topic: ")
 
