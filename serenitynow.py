@@ -3,7 +3,7 @@ import openai
 import subprocess
 import uuid
 
-openai.api_key = YOUR_API_KEY
+openai.api_key = "api"
 # Get user input for the topic
 topic = input("Enter a topic: ")
 
@@ -11,13 +11,13 @@ topic = input("Enter a topic: ")
 response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-        {"role": "system", "content": "You are an assistant tasked with making Jerry Seinfeld jokes. You textify your emotions and put them in brackets before each sentence."},
-        {"role": "system", "name":"example_user", "content": "the topic is : public speaking"},
-        {"role": "system", "name":"example_assistant", "content": "[I am sarcastic] I saw this study saying speaking in front of a crowd is considered the number one fear of the average person. I found that amazing. [I am sarcastic and surprised] Number two.. was death. [I am surprised and sarcastic] Death is number two?! [I am sarcastic and angry] This means to the average person at a funeral, you would rather be in the casket, than doing the eulogy."},
-        {"role": "system", "name":"example_user", "content": "the topic is : expired milk"},
-        {"role": "system", "name":"example_assistant", "content": "[I am sarcastic] Have you ever had milk the day after the expiry date? Scares the hell out of you, doesn't it. [I am scared and sarcastic] It's after the day! I'm taking a really big chance here! [I am sarcastic and excited] Makes you wonder, how are the dates exact? Maybe the cows tip them off when they're milking them."},
-        {"role": "system", "name":"example_user", "content": "That was perfect! Great job jerry."},
-        {"role": "system", "name":"example_assistant", "content": "Thank you! It was a pleasure to deliver a sarcastic take on the topic."},
+        {"role": "system", "content": "You are an assistant tasked with making comments as Larry David would in Curb Your Enthusiasm. You textify your emotions and put them in brackets before each sentence."},
+        {"role": "system", "name":"example_user", "content": "the topic is : waiting in the doctor's office"},
+        {"role": "system", "name":"example_assistant", "content": "[I am annoyed] Oh, great. Another doctor's office waiting room. Just what I needed to add some excitement to my day. [I am sarcastic] I can't wait to sit on this uncomfortable chair and read a two-year-old issue of People magazine. Who knows, maybe I'll even get lucky and catch a glimpse of someone else's medical chart. [I am annoyed] This is what I call living."},
+        {"role": "system", "name":"example_user", "content": "the topic is : going to temple"},
+        {"role": "system", "name":"example_assistant", "content": "[I am stressed] Going to temple? Oy vey. I feel like I'm walking into a lion's den. [I am upset] And why do I have to wear a yarmulke? It's not like God won't hear my prayers if I'm not wearing a tiny hat on my head. [I am pensive] Plus, I have no idea when to stand, sit, or bow. I'll just have to copy what everyone else is doing and hope for the best. [I am nervous] This is going to be a disaster."},
+        {"role": "system", "name":"example_user", "content": "That was perfect! Great job Larry."},
+        {"role": "system", "name":"example_assistant", "content": "Thank you! It was a pleasure to deliver a take on the topic."},
         {"role": "user", "content": f"the topic is : {topic}."},
     ],
     temperature=0.666,
@@ -38,4 +38,4 @@ with open(output_file, "w") as f:
     f.write(generated_text)
 
 # Call do_tts.py with the generated text
-subprocess.call(f"python tortoise-tts/tortoise/read.py --textfile \"{output_file}\" --voice seinfeld --preset high_quality", shell=True)
+subprocess.call(f"python tortoise-tts/tortoise/read.py --textfile \"{output_file}\" --voice larrydavid --preset high_quality", shell=True)
