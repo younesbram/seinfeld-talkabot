@@ -27,7 +27,7 @@ The Seinfeld-Talkabot is a project that utilizes OpenAI's gpt-3.5-turbo model an
 
 
 ## Todo:
-Create any kind of frontend to interact with backend of selecting a topic (Text input) => turbogpt3.5 generate a script => api call to TorToiSe + pyfastmp3encoder to generate a .wav file with the selected seinfeld character voice. Currently supporting jerry seinfelds voice from his audiobook + wav files from the seinfeld show itself.
+Create any kind of frontend to interact with backend of selecting a topic (Text input) => turbogpt3.5 generate a script => api call to TorToiSe + pyfastmp3encoder to generate a .wav file with the selected seinfeld character voice. Currently supporting 3 seinfeld character voices from wav files.
 
 ## Ethical Promises
 This project is just to showcase the potential of such apps. Hopefully in the future we will have a more clear guideline on ethically using applications such as this. I hope I gave enough credit where due. Please let me know of any issues younes@younes.ca
